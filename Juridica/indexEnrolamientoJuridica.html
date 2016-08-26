@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script type="text/javascript" src="../scripts/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../scripts/zelect.js"></script>
+    <script type="text/javascript" src="../scripts/json2.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.Rut.js"></script>
+    <script type="text/javascript" src="../scripts/jsDatePick.jquery.full.1.3.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.mask.js"></script>
+    <script type="text/javascript" src="../scripts/controllerJUR.js"></script>
+<title>Page Title</title>
+</head>
+<body>
+
+
+
+
+<div id="big_container" style="width: 100%;">
+    <div class="datagrid" style="width: 895px;">
+        <form action="" enctype="multipart/form-data" method="post" id="enrolamiento_juridica" name="enrolamiento_juridica">
+            <table>
+                <thead>
+                    <tr>
+                        <th id="_title_grid" colspan="4" class="title">Persona Jurídica  - Enrolamiento Inmediato</th>
+                    </tr>
+                </thead>
+                <tbody id="_data" class="con-border-line">
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Datos Básicos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold !important;"><span class="req" style="color:red">* </span>Rut:</td>
+                        <td class="enrol-column-2"><input id="ident_cliente" class="maxwidth rut required required_2" type="text" name="ident_cliente" maxlength="20" /></td>
+                        <td class="enrol-column-2" style="font-weight:bold !important;"></td>
+                        <td class="enrol-column-2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  colspan="2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Razón Social:<br><input  id="razon_social" class="maxwidth required required_2" type="text" name="razon_social" maxlength="60" />
+                        </td>
+                        <td  colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  colspan="2"  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Nombre de Fantasía:<br><input  id="nombre_fantasia" class="maxwidth required required_2" type="text" name="nombre_fantasia" maxlength="50" />
+                        </td>
+                        <td  colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Fecha de Constitución: <br>
+                            <input id="fech_constitucion" class="fecha required" type="text" name="fech_constitucion" maxlength="20" />
+                            <a id="fech_constitucion_button" name="fech_constitucion_button" class="con-a-img"><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Fecha de Escritura Pública: <br>
+                            <input id="fech_escritura_publica" class="fecha required" type="text" name="fech_escritura_publica" maxlength="20" />
+                            <a id="fech_escritura_publica_button" name="fech_escritura_publica_button" class="con-a-img"><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                           <span class="req" style="color:red">* </span>
+                            Fecha de Inicio de Operaciones: <br>
+                            <input id="fech_nacimiento" class="fecha required required_2" type="text" name="fech_nacimiento" maxlength="20" />
+                            <a id="fech_nacimiento_button" name="fech_nacimiento_button" class="con-a-img"><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Tipo de Cliente:<br>
+                            <select class="maxwidth required required_2" id="tipo_cli" name="tipo_cli" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Tipo de Entidad Legal:<br>
+                            <select class="maxwidth required required_2" id="tipo_ent_legal" name="tipo_ent_legal" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Notaría (Comuna y N°):<br>
+                            <input  id="notaria" class="maxwidth required" type="text" name="notaria" maxlength="50" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            País Constitución:<br>
+                            <select class="maxwidth required pais required_2" id="pais_constitucion" name="pais_constitucion" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Nacionalidad:<br>
+                            <select class="maxwidth required pais required_2" id="nacionalidad" name="nacionalidad" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            País Casa Matriz:<br>
+                            <select class="maxwidth required pais" id="pais_casa_matriz" name="pais_casa_matriz" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            País Pago de Impuestos:<br>
+                            <select class="maxwidth required pais" id="pais_pago_impuestos" name="pais_pago_impuestos" >
+                                <option value="">Seleccione...</option>
+                                
+                                
+                            </select>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Nro. Identificación Tributaria:<br>
+                            <input id="identificacion_tributaria" class="maxwidth required" type="text" name="identificacion_tributaria" maxlength="20" />
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Clasificación Empresa:<br>
+                            <select class="maxwidth required " id="clasif_empr" name="clasif_empr">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            Código GIIN:<br>
+                            <input  id="codigo_giin" class="maxwidth" type="text" name="codigo_giin" maxlength="20" disabled />
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td  colspan="2" style="font-weight:bold  !important;">
+                            Página Web:<br>
+                            <input  id="pagina_web" class="maxwidth web required" type="text" name="pagina_web" maxlength="50"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td  colspan="2" style="font-weight:bold  !important;">
+                            Personería Jurídica  de los Firmantes:<br>
+                            <input  id="personeria_juridica" class="maxwidth" type="text" name="personeria_juridica" maxlength="50"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Actividad Económica SII:<br>
+                            <select class="maxwidth required giro" id="actividad_economica" name="actividad_economica">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Información de Contacto
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold  !important;">
+                            Teléfono Comercial:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_particular" class="telefono" type="text" name="telefono_particular"/>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Teléfono Celular:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_celular" class="telefono required required_2" type="text" name="telefono_celular"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Correo Electrónico:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="correo_electronico" class="correo required required_2" type="text" name="correo_electronico" maxlength="50"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Dirección
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Dirección Particular:
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>País:<br>
+                            <select class="maxwidth required pais" id="dir_pais" name="dir_pais">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Región:<br>
+                            <select class="maxwidth required region" id="dir_region" name="dir_region">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span><span class="dir_comuna">Comuna:</span><br>
+                            <select class="maxwidth required" id="dir_comuna" name="dir_comuna">
+                                <option value="0">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Ciudad:<br>
+                            <input id="dir_ciudad" class="maxwidth" type="text" name="dir_ciudad" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;" >
+                            <span class="req" style="color:red">* </span>Dirección:<br>
+                            <input id="dir_direccion" class="maxwidth required" type="text" name="dir_direccion" maxlength="25" />
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Número:
+                            <input id="dir_numero" class="required" type="text" name="dir_numero" maxlength="15"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="3" style="font-weight:bold  !important;" >
+                            Complemento:<br>
+                            <input id="dir_complemento" class="maxwidth" type="text" name="dir_complemento" maxlength="38" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span style="color:red; padding-left:10px;"></span>Dirección Extranjero: <br>
+                            <span style="color:red; padding-left:10px;"></span>(opcional)<input type="checkbox" id="dir_extranjero" name="dir_extranjero" value="S" class="required">
+                        </td>
+                        <td style="font-weight:bold  !important;">
+                            País:<br>
+                            <select class="dir_extranjero maxwidth pais" id="dir_extran_pais" name="dir_extran_pais" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Ciudad:<br>
+                            <input id="dir_extranjero_ciudad" class="maxwidth " type="text" name="dir_extranjero_ciudad" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Estado/Provincia:<br>
+                            <select class="dir_extranjero maxwidth" id="dir_extranjero_estado_provincia" name="dir_extranjero_estado_provincia" disabled>
+                                <option value="0">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>                   
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;" >
+                            Dirección:<br>
+                            <input id="dir_extranjero_direccion" class="dir_extranjero maxwidth" type="text" name="dir_extranjero_direccion" maxlength="25" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Número:
+                            <input id="dir_extranjero_numero" class="dir_extranjero" type="text" name="dir_extranjero_numero" maxlength="15" disabled/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="3" style="font-weight:bold  !important;" >
+                            Complemento:<br>
+                            <input id="dir_extranjero_complemento" class="maxwidth dir_extranjero" type="text" name="dir_extranjero_complemento" maxlength="38" disabled/>
+                        </td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Antecedentes Adicionales
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            Participación en Sociedades:<input class="" type="checkbox" name="tiene_part_en_sociedades" value="1" id="tiene_part_en_sociedades" >
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            Rut Sociedad:<br>
+                            <input id="rut_part_en_sociedades" class="maxwidth rut part_en_sociedades" type="text" name="rut_part_en_sociedades" maxlength="20" disabled/>
+                        </td>
+                        <td class="" colspan="2" style="font-weight:bold  !important;">
+                            Razón Social de la empresa:<br>
+                            <input id="razon_social_part_en_sociedades" class="maxwidth part_en_sociedades" type="text" name="razon_social_part_en_sociedades" maxlength="80" disabled/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;"></td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            % Participación:<br>
+                            <input id="porcentaje_part_en_sociedades" class="maxwidth part_en_sociedades" type="text" name="porcentaje_part_en_sociedades" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Actividad Económica SII:<br>
+                            <select class="maxwidth part_en_sociedades giro" id="act_economica_part_en_sociedades" name="act_economica_part_en_sociedades" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" style="font-weight:bold  !important;">
+                         <span style="color:red; padding-left:10px;"></span>Socios o Accionistas sobre un 10 por ciento:
+                            <div class="datagrid">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td colspan="7" style="font-weight:bold  !important; text-align:center !important;" >
+                                                Identificación de los Socios o Accionistas
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1" style=" max-width: 70px !important; width: 70px !important; min-width: 70px !important;">
+                                                Rut
+                                            </td>
+                                            <td colspan="1">
+                                                Socio o Accionista
+                                            </td>
+                                            <td colspan="1">
+                                                PJ
+                                            </td>
+                                            <td colspan="1">
+                                                % Participación
+                                            </td>
+                                            <td colspan="1"> 
+                                                Nacionalidad
+                                            </td>
+                                            <td colspan="1"> 
+                                                PEP
+                                            </td>
+                                            <td colspan="1"> 
+                                                Rel. PEP
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="participan_y_pep">
+
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa1 rut no-permite-duplicado" type="text" id="participa_rut_1" name="participa_rut_1" maxlength="20"/></td>
+                                            <td><input class="participa1" type="text" id="participa_razon_1" name="participa_razon_1" maxlength="80" disabled/></td>
+                                            <td><input class="participa1 participa_es_juridica" type="checkbox" name="participa_es_juridica_1" value="1" id="participa_es_juridica_1" disabled></td>
+                                            <td><input class="participa1 porcentaje" type="text" id="participa_porcentaje_1" name="participa_porcentaje_1" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa1 pais" id="participa_pais_1" name="participa_pais_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                    
+                                                </select>
+                                            </td>
+                                            <td><input class="participa1 participa_es_pep" type="checkbox" name="participa_es_pep_1" value="1" id="participa_es_pep_1" disabled></td>
+                                            <td><input class="participa1 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_1" value="1" id="participa_es_rel_pep_1" disabled></td>
+                                        </tr>
+
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa1 maxwidth" type="text" id="pep_cargo_1" name="pep_cargo_1" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa1 maxwidth" type="text" id="pep_institucion_1" name="pep_institucion_1" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_1" name="pep_fecha_1" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_1_button" name="pep_fecha_1_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa1 maxwidth" type="text" id="rel_nombre_1_1" name="rel_nombre_1_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa1 maxwidth rut" type="text" id="rel_rut_1_1" name="rel_rut_1_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;"/>
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa1 maxwidth  pais" id="rel_pais_1_1" name="rel_pais_1_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                    
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa1 maxwidth" type="text" id="rel_nombre_1_2" name="rel_nombre_1_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa1 maxwidth rut" type="text" id="rel_rut_1_2" name="rel_rut_1_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa1 pais" id="rel_pais_1_2" name="rel_pais_1_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                    
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa1 maxwidth" type="text" id="rel_nombre_1_3" name="rel_nombre_1_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa1 maxwidth rut" type="text" id="rel_rut_1_3" name="rel_rut_1_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa1 pais" id="rel_pais_1_3" name="rel_pais_1_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa2 rut no-permite-duplicado" type="text" id="participa_rut_2" name="participa_rut_2" maxlength="20"/></td>
+                                            <td><input class="participa2" type="text" id="participa_razon_2" name="participa_razon_2" maxlength="80" disabled/></td>
+                                            <td><input class="participa2 participa_es_juridica" type="checkbox" name="participa_es_juridica_2" value="2" id="participa_es_juridica_2" disabled></td>
+                                            <td><input class="participa2 porcentaje" type="text" id="participa_porcentaje_2" name="participa_porcentaje_2" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa2 pais" id="participa_pais_2" name="participa_pais_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa2 participa_es_pep" type="checkbox" name="participa_es_pep_2" value="2" id="participa_es_pep_2" disabled></td>
+                                            <td><input class="participa2 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_2" value="2" id="participa_es_rel_pep_2" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa2 maxwidth" type="text" id="pep_cargo_2" name="pep_cargo_2" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa2 maxwidth" type="text" id="pep_institucion_2" name="pep_institucion_2" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_2" name="pep_fecha_2" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_2_button" name="pep_fecha_2_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa2 maxwidth" type="text" id="rel_nombre_2_1" name="rel_nombre_2_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa2 maxwidth rut" type="text" id="rel_rut_2_1" name="rel_rut_2_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa2 maxwidth pais" id="rel_pais_2_1" name="rel_pais_2_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa2 maxwidth" type="text" id="rel_nombre_2_2" name="rel_nombre_2_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa2 maxwidth rut" type="text" id="rel_rut_2_2" name="rel_rut_2_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa2 pais" id="rel_pais_2_2" name="rel_pais_2_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa2 maxwidth" type="text" id="rel_nombre_2_3" name="rel_nombre_2_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa2 maxwidth rut" type="text" id="rel_rut_2_3" name="rel_rut_2_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa2 pais" id="rel_pais_2_3" name="rel_pais_2_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa3 rut no-permite-duplicado" type="text" id="participa_rut_3" name="participa_rut_3" maxlength="20"/></td>
+                                            <td><input class="participa3" type="text" id="participa_razon_3" name="participa_razon_3" maxlength="80" disabled/></td>
+                                            <td><input class="participa3 participa_es_juridica" type="checkbox" name="participa_es_juridica_3" value="3" id="participa_es_juridica_3" disabled></td>
+                                            <td><input class="participa3 porcentaje" type="text" id="participa_porcentaje_3" name="participa_porcentaje_3" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa3 pais" id="participa_pais_3" name="participa_pais_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa3 participa_es_pep" type="checkbox" name="participa_es_pep_3" value="3" id="participa_es_pep_3" disabled></td>
+                                            <td><input class="participa3 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_3" value="3" id="participa_es_rel_pep_3" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa3 maxwidth" type="text" id="pep_cargo_3" name="pep_cargo_3" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa3 maxwidth" type="text" id="pep_institucion_3" name="pep_institucion_3" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_3" name="pep_fecha_3" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_3_button" name="pep_fecha_3_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa3 maxwidth" type="text" id="rel_nombre_3_1" name="rel_nombre_3_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa3 maxwidth rut" type="text" id="rel_rut_3_1" name="rel_rut_3_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa3 maxwidth  pais" id="rel_pais_3_1" name="rel_pais_3_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa3 maxwidth" type="text" id="rel_nombre_3_2" name="rel_nombre_3_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa3 maxwidth rut" type="text" id="rel_rut_3_2" name="rel_rut_3_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa3 pais" id="rel_pais_3_2" name="rel_pais_3_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa3 maxwidth" type="text" id="rel_nombre_3_3" name="rel_nombre_3_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa3 maxwidth rut" type="text" id="rel_rut_3_3" name="rel_rut_3_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa3 pais" id="rel_pais_3_3" name="rel_pais_3_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa4 rut no-permite-duplicado" type="text" id="participa_rut_4" name="participa_rut_4" maxlength="20"/></td>
+                                            <td><input class="participa4" type="text" id="participa_razon_4" name="participa_razon_4" maxlength="80" disabled/></td>
+                                            <td><input class="participa4 participa_es_juridica" type="checkbox" name="participa_es_juridica_4" value="4" id="participa_es_juridica_4" disabled></td>
+                                            <td><input class="participa4 porcentaje" type="text" id="participa_porcentaje_4" name="participa_porcentaje_4" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa4 pais" id="participa_pais_4" name="participa_pais_4" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa4 participa_es_pep" type="checkbox" name="participa_es_pep_4" value="4" id="participa_es_pep_4" disabled></td>
+                                            <td><input class="participa4 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_4" value="4" id="participa_es_rel_pep_4" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa4 maxwidth" type="text" id="pep_cargo_4" name="pep_cargo_4" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa4 maxwidth" type="text" id="pep_institucion_4" name="pep_institucion_4" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_4" name="pep_fecha_4" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_4_button" name="pep_fecha_4_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa4 maxwidth" type="text" id="rel_nombre_4_1" name="rel_nombre_4_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa4 maxwidth rut" type="text" id="rel_rut_4_1" name="rel_rut_4_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa4 maxwidth  pais" id="rel_pais_4_1" name="rel_pais_4_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa4 maxwidth" type="text" id="rel_nombre_4_2" name="rel_nombre_4_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa4 maxwidth rut" type="text" id="rel_rut_4_2" name="rel_rut_4_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa4 pais" id="rel_pais_4_2" name="rel_pais_4_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa4 maxwidth" type="text" id="rel_nombre_4_3" name="rel_nombre_4_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa4 maxwidth rut" type="text" id="rel_rut_4_3" name="rel_rut_4_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa4 pais" id="rel_pais_4_3" name="rel_pais_4_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa5 rut no-permite-duplicado" type="text" id="participa_rut_5" name="participa_rut_5" maxlength="20"/></td>
+                                            <td><input class="participa5" type="text" id="participa_razon_5" name="participa_razon_5" maxlength="80" disabled/></td>
+                                            <td><input class="participa5 participa_es_juridica" type="checkbox" name="participa_es_juridica_5" value="5" id="participa_es_juridica_5" disabled></td>
+                                            <td><input class="participa5 porcentaje" type="text" id="participa_porcentaje_5" name="participa_porcentaje_5" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa5 pais" id="participa_pais_5" name="participa_pais_5" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa5 participa_es_pep" type="checkbox" name="participa_es_pep_5" value="5" id="participa_es_pep_5" disabled></td>
+                                            <td><input class="participa5 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_5" value="5" id="participa_es_rel_pep_5" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa5 maxwidth" type="text" id="pep_cargo_5" name="pep_cargo_5" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa5 maxwidth" type="text" id="pep_institucion_5" name="pep_institucion_5" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_5" name="pep_fecha_5" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_5_button" name="pep_fecha_5_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa5 maxwidth" type="text" id="rel_nombre_5_1" name="rel_nombre_5_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa5 maxwidth rut" type="text" id="rel_rut_5_1" name="rel_rut_5_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa5 maxwidth  pais" id="rel_pais_5_1" name="rel_pais_5_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa5 maxwidth" type="text" id="rel_nombre_5_2" name="rel_nombre_5_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa5 maxwidth rut" type="text" id="rel_rut_5_2" name="rel_rut_5_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa5 pais" id="rel_pais_5_2" name="rel_pais_5_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa5 maxwidth" type="text" id="rel_nombre_5_3" name="rel_nombre_5_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa5 maxwidth rut" type="text" id="rel_rut_5_3" name="rel_rut_5_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa5 pais" id="rel_pais_5_3" name="rel_pais_5_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa6 rut no-permite-duplicado" type="text" id="participa_rut_6" name="participa_rut_6" maxlength="20"/></td>
+                                            <td><input class="participa6" type="text" id="participa_razon_6" name="participa_razon_6" maxlength="80" disabled/></td>
+                                            <td><input class="participa6 participa_es_juridica" type="checkbox" name="participa_es_juridica_6" value="6" id="participa_es_juridica_6" disabled></td>
+                                            <td><input class="participa6 porcentaje" type="text" id="participa_porcentaje_6" name="participa_porcentaje_6" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa6 pais" id="participa_pais_6" name="participa_pais_6" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa6 participa_es_pep" type="checkbox" name="participa_es_pep_6" value="6" id="participa_es_pep_6" disabled></td>
+                                            <td><input class="participa6 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_6" value="6" id="participa_es_rel_pep_6" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa6 maxwidth" type="text" id="pep_cargo_6" name="pep_cargo_6" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa6 maxwidth" type="text" id="pep_institucion_6" name="pep_institucion_6" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_6" name="pep_fecha_6" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_6_button" name="pep_fecha_6_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa6 maxwidth" type="text" id="rel_nombre_6_1" name="rel_nombre_6_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa6 maxwidth rut" type="text" id="rel_rut_6_1" name="rel_rut_6_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa6 maxwidth  pais" id="rel_pais_6_1" name="rel_pais_6_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa6 maxwidth" type="text" id="rel_nombre_6_2" name="rel_nombre_6_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa6 maxwidth rut" type="text" id="rel_rut_6_2" name="rel_rut_6_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa6 pais" id="rel_pais_6_2" name="rel_pais_6_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa6 maxwidth" type="text" id="rel_nombre_6_3" name="rel_nombre_6_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa6 maxwidth rut" type="text" id="rel_rut_6_3" name="rel_rut_6_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa6 pais" id="rel_pais_6_3" name="rel_pais_6_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa7 rut no-permite-duplicado" type="text" id="participa_rut_7" name="participa_rut_7" maxlength="20"/></td>
+                                            <td><input class="participa7" type="text" id="participa_razon_7" name="participa_razon_7" maxlength="80" disabled/></td>
+                                            <td><input class="participa7 participa_es_juridica" type="checkbox" name="participa_es_juridica_7" value="7" id="participa_es_juridica_7" disabled></td>
+                                            <td><input class="participa7 porcentaje" type="text" id="participa_porcentaje_7" name="participa_porcentaje_7" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa7 pais" id="participa_pais_7" name="participa_pais_7" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa7 participa_es_pep" type="checkbox" name="participa_es_pep_7" value="7" id="participa_es_pep_7" disabled></td>
+                                            <td><input class="participa7 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_7" value="7" id="participa_es_rel_pep_7" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa7 maxwidth" type="text" id="pep_cargo_7" name="pep_cargo_7" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa7 maxwidth" type="text" id="pep_institucion_7" name="pep_institucion_7" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_7" name="pep_fecha_7" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_7_button" name="pep_fecha_7_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa7 maxwidth" type="text" id="rel_nombre_7_1" name="rel_nombre_7_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa7 maxwidth rut" type="text" id="rel_rut_7_1" name="rel_rut_7_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa7 maxwidth  pais" id="rel_pais_7_1" name="rel_pais_7_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa7 maxwidth" type="text" id="rel_nombre_7_2" name="rel_nombre_7_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa7 maxwidth rut" type="text" id="rel_rut_7_2" name="rel_rut_7_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa7 pais" id="rel_pais_7_2" name="rel_pais_7_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa7 maxwidth" type="text" id="rel_nombre_7_3" name="rel_nombre_7_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa7 maxwidth rut" type="text" id="rel_rut_7_3" name="rel_rut_7_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa7 pais" id="rel_pais_7_3" name="rel_pais_7_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa8 rut no-permite-duplicado" type="text" id="participa_rut_8" name="participa_rut_8" maxlength="20"/></td>
+                                            <td><input class="participa8" type="text" id="participa_razon_8" name="participa_razon_8" maxlength="20" disabled/></td>
+                                            <td><input class="participa8 participa_es_juridica" type="checkbox" name="participa_es_juridica_8" value="8" id="participa_es_juridica_8" disabled></td>
+                                            <td><input class="participa8 porcentaje" type="text" id="participa_porcentaje_8" name="participa_porcentaje_8" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa8 pais" id="participa_pais_8" name="participa_pais_8" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa8 participa_es_pep" type="checkbox" name="participa_es_pep_8" value="8" id="participa_es_pep_8" disabled></td>
+                                            <td><input class="participa8 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_8" value="8" id="participa_es_rel_pep_8" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa8 maxwidth" type="text" id="pep_cargo_8" name="pep_cargo_8" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa8 maxwidth" type="text" id="pep_institucion_8" name="pep_institucion_8" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_8" name="pep_fecha_8" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_8_button" name="pep_fecha_8_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa8 maxwidth" type="text" id="rel_nombre_8_1" name="rel_nombre_8_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa8 maxwidth rut" type="text" id="rel_rut_8_1" name="rel_rut_8_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa8 maxwidth  pais" id="rel_pais_8_1" name="rel_pais_8_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa8 maxwidth" type="text" id="rel_nombre_8_2" name="rel_nombre_8_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa8 maxwidth rut" type="text" id="rel_rut_8_2" name="rel_rut_8_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa8 pais" id="rel_pais_8_2" name="rel_pais_8_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa8 maxwidth" type="text" id="rel_nombre_8_3" name="rel_nombre_8_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa8 maxwidth rut" type="text" id="rel_rut_8_3" name="rel_rut_8_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa8 pais" id="rel_pais_8_3" name="rel_pais_8_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa9 rut no-permite-duplicado" type="text" id="participa_rut_9" name="participa_rut_9" maxlength="20"/></td>
+                                            <td><input class="participa9" type="text" id="participa_razon_9" name="participa_razon_9" maxlength="80" disabled/></td>
+                                            <td><input class="participa9 participa_es_juridica" type="checkbox" name="participa_es_juridica_9" value="8" id="participa_es_juridica_9" disabled></td>
+                                            <td><input class="participa9 porcentaje" type="text" id="participa_porcentaje_9" name="participa_porcentaje_9" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa9 pais" id="participa_pais_9" name="participa_pais_9" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa9 participa_es_pep" type="checkbox" name="participa_es_pep_9" value="8" id="participa_es_pep_9" disabled></td>
+                                            <td><input class="participa9 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_9" value="8" id="participa_es_rel_pep_9" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa9 maxwidth" type="text" id="pep_cargo_9" name="pep_cargo_9" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa9 maxwidth" type="text" id="pep_institucion_9" name="pep_institucion_9" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_9" name="pep_fecha_9" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_9_button" name="pep_fecha_9_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa9 maxwidth" type="text" id="rel_nombre_9_1" name="rel_nombre_9_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa9 maxwidth rut" type="text" id="rel_rut_9_1" name="rel_rut_9_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa9 maxwidth  pais" id="rel_pais_9_1" name="rel_pais_9_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa9 maxwidth" type="text" id="rel_nombre_9_2" name="rel_nombre_9_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa9 maxwidth rut" type="text" id="rel_rut_9_2" name="rel_rut_9_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa9 pais" id="rel_pais_9_2" name="rel_pais_9_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa9 maxwidth" type="text" id="rel_nombre_9_3" name="rel_nombre_9_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa9 maxwidth rut" type="text" id="rel_rut_9_3" name="rel_rut_9_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa9 pais" id="rel_pais_9_3" name="rel_pais_9_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_inter">
+                                            <td><input class="participa10 rut no-permite-duplicado" type="text" id="participa_rut_10" name="participa_rut_10" maxlength="20"/></td>
+                                            <td><input class="participa10" type="text" id="participa_razon_10" name="participa_razon_10" maxlength="80" disabled/></td>
+                                            <td><input class="participa10 participa_es_juridica" type="checkbox" name="participa_es_juridica_10" value="8" id="participa_es_juridica_10" disabled></td>
+                                            <td><input class="participa10 porcentaje" type="text" id="participa_porcentaje_10" name="participa_porcentaje_10" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                            <td>
+                                                <select class="maxwidth participa10 pais" id="participa_pais_10" name="participa_pais_10" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                            <td><input class="participa10 participa_es_pep" type="checkbox" name="participa_es_pep_10" value="8" id="participa_es_pep_10" disabled></td>
+                                            <td><input class="participa10 participa_es_rel_pep" type="checkbox" name="participa_es_rel_pep_10" value="8" id="participa_es_rel_pep_10" disabled></td>
+                                        </tr>
+                                        <tr class="sub_collap_pep">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Cargo:<br>
+                                                <input class="PEP participa10 maxwidth" type="text" id="pep_cargo_10" name="pep_cargo_10" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Institución:<br>
+                                                <input class="PEP participa10 maxwidth" type="text" id="pep_institucion_10" name="pep_institucion_10" maxlength="30" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                            <td colspan="2">
+                                                Fecha de Servicio:<br>
+                                                <input class="PEP fecha" type="text" id="pep_fecha_10" name="pep_fecha_10" maxlength="20" style="max-width: 70px !important; width: 70px !important; min-width: 70px !important;" disabled/>
+                                                <a id="pep_fecha_10_button" name="pep_fecha_10_button" class="PEP con-a-img" disabled><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa10 maxwidth" type="text" id="rel_nombre_10_1" name="rel_nombre_10_1" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa10 maxwidth rut" type="text" id="rel_rut_10_1" name="rel_rut_10_1" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL participa10 maxwidth  pais" id="rel_pais_10_1" name="rel_pais_10_1" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa10 maxwidth" type="text" id="rel_nombre_10_2" name="rel_nombre_10_2" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa10 maxwidth rut" type="text" id="rel_rut_10_2" name="rel_rut_10_2" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa10 pais" id="rel_pais_10_2" name="rel_pais_10_2" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="sub_collap_rel">
+                                            <td colspan="1" ></td>
+                                            <td colspan="2">
+                                                Nombre:<br>
+                                                <input class="REL participa10 maxwidth" type="text" id="rel_nombre_10_3" name="rel_nombre_10_3" maxlength="80" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" disabled/>
+                                            </td>
+                                             <td colspan="2">
+                                                Rut:<br>
+                                                <input class="REL participa10 maxwidth rut" type="text" id="rel_rut_10_3" name="rel_rut_10_3" maxlength="20" style="max-width: 170px !important; width: 170px !important; min-width: 170px !important;" />
+                                            </td>
+                                            <td colspan="2">
+                                                Nacionalidad:<br>
+                                                <select class="REL maxwidth participa10 pais" id="rel_pais_10_3" name="rel_pais_10_3" disabled>
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Cliente Posee cuenta Corriente en BCI:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <label for="cuenta_bci_si">Si</label>
+                            <input type="radio" name="cuenta_bci" value="S" id="cuenta_bci_si">
+                            <label for="cuenta_bci_no">No</label>
+                            <input type="radio" name="cuenta_bci" value="N" id="cuenta_bci_no" checked>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Posee Inversiones en BCI AGF:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <label for="inver_bci_agf_si">Si</label>
+                            <input type="radio" name="inver_bci_agf" value="S" id="inver_bci_agf_si">
+                            <label for="inver_bci_agf_no">No</label>
+                            <input type="radio" name="inver_bci_agf" value="N" id="inver_bci_agf_no" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Posee Inversiones en BCI:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <label for="inver_bci_si">Si</label>
+                            <input type="radio" name="inver_bci" value="S" id="inver_bci_si">
+                            <label for="inver_bci_no">No</label>
+                            <input type="radio" name="inver_bci" value="N" id="inver_bci_no" checked>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Relación Corredora (NCG 380):<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth required" id="rel_corr_ncg" name="rel_corr_ncg">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Relación Corredora (Art. 100):<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <label for="rel_corr_100_si">Si</label>
+                            <input type="radio" name="rel_corr_100" value="S" id="rel_corr_100_si">
+                            <label for="rel_corr_100_no">No</label>
+                            <input type="radio" name="rel_corr_100" value="N" id="rel_corr_100_no" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Clasificación FATCA:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth" id="clas_fatca" name="clas_fatca">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Datos para Contacto
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            Contacto (opcional):<input type="checkbox" name="tiene_contacto" id="tiene_contacto" value="SI" >
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            Nombres:<br><input  id="nombres_contacto" class="maxwidth contacto" type="text" name="nombres_contacto" maxlength="30" disabled/>
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            Apellido Paterno:<br><input id="ape_pat_contacto" class="maxwidth contacto" type="text" name="ape_pat_contacto" maxlength="30" disabled/>
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            Apellido Materno:<br><input id="ape_mat_contacto" class="maxwidth contacto" type="text" name="ape_mat_contacto" maxlength="30" disabled/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            Dirección de Contacto:
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            País:<br>
+                            <select class="maxwidth contacto pais" id="pais_contacto" name="pais_contacto" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;" >
+                            Región:<br>
+                            <select class="maxwidth contacto region" id="region_contacto" name="region_contacto" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            <span class="comuna_contacto">Comuna:</span><br>
+                            <select class="maxwidth contacto" id="comuna_contacto" name="comuna_contacto" disabled>
+                                <option value="0">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Ciudad:<br>
+                            <input id="ciudad_contacto" class="maxwidth" type="text" name="ciudad_contacto" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Código Postal:<br><input  id="codigo_postal_contacto" class="maxwidth contacto" type="text" name="codigo_postal_contacto" maxlength="11" disabled/>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            Cargo:<br><input  id="cargo_contacto" class="maxwidth contacto" type="text" name="cargo_contacto" maxlength="30" disabled/>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;" >
+                            Dirección:<br>
+                            <input id="direccion_contacto" class="maxwidth contacto" type="text" name="direccion_contacto" maxlength="50" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold  !important;">
+                            Teléfono Particular Contacto:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_par_contacto" class="telefono contacto" type="text" name="telefono_par_contacto" disabled/>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            Teléfono Celular Contacto:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_cel_contacto" class="telefono contacto" type="text" name="telefono_cel_contacto" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            Fax Contacto:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_fax_contacto" class="telefono contacto" type="text" name="telefono_fax_contacto" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            Correo Electrónico Contacto:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="correo_electronico_contacto" class="correo contacto" type="text" name="correo_electronico_contacto" maxlength="50" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    
+
+                    
+                    
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Datos del Representante Legal y Apoderado
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold !important;"><span class="req" style="color:red">* </span> Representante Legal</td>
+                        <td class="enrol-column-2" style="font-weight:bold !important;">
+                            <span class="req" style="color:red">* </span>
+                            Rol Único Tributaria: <br>
+                            <input id="ident_rep_legal" class="maxwidth rut required " type="text" name="ident_rep_legal" maxlength="20" />
+                        </td>
+                        <td  class="enrol-column-2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Fecha de Inicio Relación: <br>
+                            <input id="fech_inicio_relacion_rep_legal" class="fecha required" type="text" name="fech_inicio_relacion_rep_legal" maxlength="20" />
+                            <a id="fech_inicio_relacion_rep_legal_button" name="fech_inicio_relacion_rep_legal_button" class="con-a-img"><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Nombres Rep. Legal:<br><input  id="nombre_rep_legal" class="maxwidth required" type="text" name="nombre_rep_legal" maxlength="20" />
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Apellido Paterno Rep. Legal:<br><input id="apellido_pat_rep_legal" class="maxwidth required" type="text" name="apellido_pat_rep_legal" maxlength="30" />
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Apellido Materno Rep. Legal:<br><input id="apellido_mat_rep_legal" class="maxwidth required" type="text" name="apellido_mat_rep_legal" maxlength="28" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold !important;"></td>
+                        <td  class="enrol-column-2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Fecha de Nacimiento Rep. Legal: <br>
+                            <input id="fech_nacimiento_rep_legal" class="fecha required" type="text" name="fech_nacimiento_rep_legal" maxlength="20" />
+                            <a id="fech_nacimiento_rep_legal_button" name="fech_nacimiento_rep_legal_button" class="con-a-img"><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold !important;">
+                            <span class="req" style="color:red">* </span>
+                            Nacionalidad Rep. Legal: <br>
+                            <select class="maxwidth required pais" id="nacionalidad_rep_legal" name="nacionalidad_rep_legal">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;"></td>
+                        
+                    </tr>
+
+
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold !important;"><span style="color:red; padding-left:10px;"></span> Apoderado <input type="checkbox" name="tiene_apoderado" id="tiene_apoderado" value="SI" ></td>
+                        <td class="enrol-column-2" style="font-weight:bold !important;">
+                            Rol Único Tributaria<br>
+                            <input id="identificador_apode" class="maxwidth rut apoderado" type="text" name="identificador_apode" maxlength="20" disabled/>
+                        </td>
+                        <td  class="enrol-column-2" style="font-weight:bold  !important;">
+                            Fecha de Inicio Relación: <br>
+                            <input id="fech_inicio_relacion_apode" class="fecha apoderado" type="text" name="fech_inicio_relacion_apode" maxlength="20"  disabled/>
+                            <a id="fech_inicio_relacion_apode_button" name="fech_inicio_relacion_apode_button" class="con-a-img"><img class="con-button-img" src="images/ic_calendario.gif"/></a>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            Nombres Apoderado:<br><input  id="nombre_apode" class="maxwidth apoderado" type="text" name="nombre_apode" maxlength="20" disabled/>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            Apellido Paterno Apoderado:<br><input id="apellido_pat_apode" class="maxwidth apoderado" type="text" name="apellido_pat_apode" maxlength="30" disabled/>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            Apellido Materno Apoderado:<br><input id="apellido_mat_apode" class="maxwidth apoderado" type="text" name="apellido_mat_apode" maxlength="28" disabled/>
+                        </td>
+                    </tr>
+
+
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Origen de Fondos a Invertir
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Origen de fondos a Invertir:<br>
+                            <select class="maxwidth required" id="ori_fon_inver" name="ori_fon_inver">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Otros:<br>
+                            <input id="ori_fon_inver_otro" class="maxwidth" type="text" name="ori_fon_inver_otro" maxlength="50" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>País de Origen de Fondos:<br>
+                            <select class="maxwidth required pais" id="pais_origen_fondos" name="pais_origen_fondos">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Ingresos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Venta Mensual Aproximada:<br>
+                            <select class="maxwidth required" id="venta_men_aprox" name="venta_men_aprox">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Patrimonio
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Patrimonio Persona Jurídica:<br>
+                            <select class="maxwidth required" id="patrimonio_per_jur" name="patrimonio_per_jur">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    
+                    
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Forma de Pago
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Medio de Pago Abono a Favor del Cliente:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth" id="mecanismo_abono" name="mecanismo_abono">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Tipo Cuenta Bancaria:<br>
+                            <select class="maxwidth" id="cue_bancaria_tip" name="cue_bancaria_tip">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Origen Cuenta Bancaria:<br>
+                            <select class="maxwidth pais cuenta_ban" id="cuenta_ban_origen" name="cuenta_ban_origen" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Sucursal Cuenta Bancaria:<br>
+                            <input class="cuenta_ban" type="text" id="cuenta_ban_sucursal" name="cuenta_ban_sucursal" maxlength="30" disabled/>
+                        </td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Número de Cuenta Bancaria:<br>
+                            <input class="cuenta_ban" type="text" id="cuenta_ban_numero" name="cuenta_ban_numero" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Banco Cuenta:<br>
+                            <select class="maxwidth  banco cuenta_ban" id="cuenta_ban_banco" name="cuenta_ban_banco" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Moneda Cuenta:<br>
+                            <select class="maxwidth cuenta_ban" id="cuen_bancar_mon" name="cuen_bancar_mon" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Datos de la Cuenta
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Número de Cuenta:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <input class="required" type="text" id="cuenta_numero" name="cuenta_numero" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Propósito:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth required" id="cuenta_prop" name="cuenta_prop">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Tipo de Perfil Comercial:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth required" id="cuenta_tipo_perfil" name="cuenta_tipo_perfil">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important; vertical-align: top !important;">
+                            <span class="req" style="color:red">* </span>Indicadores:<br>
+                        </td>
+                        <td colspan="3" style="font-weight:bold  !important;">
+                            <div class="datagrid">
+                                <table>
+                                    <tbody id="tabla_ind">
+                                        <tr>
+                                            <td>Administración de Cartera:</td>
+                                            <td><input type="checkbox" name="cuenta_admin_cartera" value="Si" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Antecedentes Legales:</td>
+                                            <td><input type="checkbox" name="cuenta_ant_legales" value="Si" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contrato Canal Internet:</td>
+                                            <td><input type="checkbox" name="cuenta_cont_canal_int" value="Si" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fotocopia Cedula de Identidad:</td>
+                                            <td><input type="checkbox" name="cuenta_copia_cedula" value="Si" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Órdenes a Recibir:</td>
+                                            <td>
+                                                <select class="required" id="cuenta_ordenes_a_recibir" name="cuenta_ordenes_a_recibir">
+                                                    <option value="">Seleccione...</option>
+                                                    <option value="NADA">NADA</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contrato Custodia:</td>
+                                            <td>
+                                                <input type="checkbox" name="cuenta_cont_custodia" id="cuenta_cont_custodia" value="Si" checked>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contrato Simultaneas:</td>
+                                            <td><input type="checkbox" name="cuenta_cont_simultaneas" value="Bike" checked></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Comisión por Custodia (UF)<br>
+                            <input class="comision_uf" type="text" id="cuenta_comision_uf" name="cuenta_comision_uf" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Comisión por Transacción RV (%)<br>
+                            <input class="required comision_por" type="text" id="cuenta_comision_rv" name="cuenta_comision_rv" maxlength="20"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Comisión por Transacción RF (%)<br>
+                            <input class="comision_por" type="text" id="cuenta_comision_rf" name="cuenta_comision_rf" maxlength="20"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Comisión por Transacción IF (%)<br>
+                            <input class="comision_por" type="text" id="cuenta_comision_if" name="cuenta_comision_if" maxlength="20"/>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <div id="paging">
+                                <a class="con-button con-blue" id="_borrador">Borrador</a>
+                                <a class="con-button con-green" id="_confirmar">Ingresar Persona</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

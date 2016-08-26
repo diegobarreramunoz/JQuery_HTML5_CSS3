@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script type="text/javascript" src="../scripts/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="../scripts/zelect.js"></script>
+    <script type="text/javascript" src="../scripts/json2.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.Rut.js"></script>
+    <script type="text/javascript" src="../scripts/jsDatePick.jquery.full.1.3.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.mask.js"></script>
+    <script type="text/javascript" src="../scripts/controllerNAT.js"></script>
+<title>Page Title</title>
+</head>
+<body>
+
+
+<div id="big_container" style="width: 100%;">
+    <div class="datagrid" style="width: 895px;">
+        <form action="" enctype="multipart/form-data" method="post" id="enrolamiento_natural" name="enrolamiento_natural">
+            <table>
+                <thead>
+                    <tr>
+                        <th id="_title_grid" colspan="4" class="title">Persona Natural - Enrolamiento Inmediato</th>
+                    </tr>
+                </thead>
+                <tbody id="_data" class="con-border-line">
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Datos Básicos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold !important;"><span class="req" style="color:red">* </span>Tipo de Documento:</td>
+                        <td class="enrol-column-2">
+                            <select class="maxwidth" id="tipo_documento" name="tipo_documento" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold !important;"><span class="req" style="color:red">* </span>Número de Documento:</td>
+                        <td class="enrol-column-2"><input id="ident_cliente" class="maxwidth rut required required_2" type="text" name="ident_cliente" maxlength="20" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Nombres:<br><input  id="nombres" class="maxwidth required required_2" type="text" name="nombres" maxlength="20" />
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Apellido Paterno:<br><input id="ape_paterno" class="maxwidth required required_2" type="text" name="ape_paterno" maxlength="30" />
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Apellido Materno:<br><input id="ape_materno" class="maxwidth required required_2" type="text" name="ape_materno" maxlength="28" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Fecha de Nacimiento: <br>
+                            <input id="fech_nacimiento" class="fecha required required_2" type="text" name="fech_nacimiento" maxlength="20" />
+                            <a id="fech_nacimiento_button" name="fech_nacimiento_button" class="con-a-img"><img class="con-button-img" src="../styles/images/ic_calendario.gif"/></a>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Sexo:
+                            <label for="Masculino">Masculino</label>
+                            <input type="radio" name="sexo" value="M" id="Masculino"checked>
+                            <label for="Femenino">Femenino</label>
+                            <input type="radio" name="sexo" value="F" id="Femenino">
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            País Nacimiento:<br>
+                            <select class="maxwidth required pais required_2" id="pais_nacimiento" name="pais_nacimiento" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            Tipo de Cliente:<br>
+                            <select class="maxwidth required required_2" id="tipo_cli" name="tipo_cli" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td style="font-weight:bold  !important;" colspan="1">
+                            <span class="req" style="color:red">* </span>
+                            País Residencia:<br>
+                            <select class="maxwidth required pais required_2" id="pais_residencia" name="pais_residencia" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            País Nacionalidad:<br>
+                            <select class="maxwidth required pais required_2" id="pais_nacionalidad" name="pais_nacionalidad" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Nro. Identificación Tributaria:<br>
+                            <input id="identificacion_tributaria" class="maxwidth required" type="text" name="identificacion_tributaria" maxlength="20" />
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            <span style="color:red; padding-left:10px;"></span>Doble Nacionalidad:<input type="checkbox" name="doble_nacionalidad" id="doble_nacionalidad"value="S">
+                        </td>
+                        <td style="font-weight:bold  !important; vertical-align: bottom !important;">
+                            País Doble Nacionalidad:<br>
+                            <select class="maxwidth doble_nacionalidad pais" id="pais_doble_nacionalidad" name="pais_doble_nacionalidad" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td style="font-weight:bold  !important;">
+                            Nro. Identificación Tributaria Doble Nacionalidad:<br>
+                            <input id="identificacion_tributaria_doble_nacionalidad" class="maxwidth doble_nacionalidad" type="text" name="identificacion_tributaria_doble_nacionalidad" maxlength="20" disabled/>
+                        </td>
+                        <td style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>
+                            País Pago de Impuestos:<br>
+                            <select class="maxwidth required pais" id="pais_pago_impuestos" name="pais_pago_impuestos" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td style="font-weight:bold  !important;" colspan="2">
+                            <span class="req" style="color:red">* </span>Profesión:<br>
+                            <select class="maxwidth" id="profesion" name="profesion" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Actividad Económica SII:<br>
+                            <select class="maxwidth giro required" id="actividad_economica" name="actividad_economica">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Nivel Educacional:<br>
+                            <select class="maxwidth required" id="nivel_educacional" name="nivel_educacional" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                            
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Tipo Vivienda:<br>
+                            <select class="maxwidth required" id="tipo_vivienda" name="tipo_vivienda">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td  colspan="2" style="font-weight:bold  !important;">
+                            Personería Jurídica de los Firmantes:<br>
+                            <input  id="personeria_juridica" class="maxwidth " type="text" name="personeria_juridica" maxlength="50"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Estado Civil:<br>
+                            <select class="maxwidth required" id="estado_civil" name="estado_civil" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td style="font-weight:bold  !important;">
+                            Régimen Conyugal:<br>
+                            <select class="maxwidth" id="regimen_conyugal" name="regimen_conyugal" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Información de Contacto
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold  !important;">
+                            Teléfono Particular:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_particular" class="telefono" type="text" name="telefono_particular"/>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Teléfono Celular:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_celular" class="telefono required required_2" type="text" name="telefono_celular"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Correo Electrónico:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="correo_electronico" class="correo required required_2" type="text" name="correo_electronico" maxlength="50"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Dirección
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Dirección Particular:
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>País:<br>
+                            <select class="maxwidth required pais" id="dir_pais" name="dir_pais">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Región:<br>
+                            <select class="maxwidth required region" id="dir_region" name="dir_region">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span><span class="dir_comuna">Comuna:</span><br>
+                            <select class="maxwidth required" id="dir_comuna" name="dir_comuna">
+                                <option value="0">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Ciudad:<br>
+                            <input id="dir_ciudad" class="maxwidth" type="text" name="dir_ciudad" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;" >
+                            <span class="req" style="color:red">* </span>Dirección:<br>
+                            <input id="dir_direccion" class="maxwidth required" type="text" name="dir_direccion" maxlength="25" />
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Número:
+                            <input id="dir_numero" class="required" type="text" name="dir_numero" maxlength="15"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="3" style="font-weight:bold  !important;" >
+                            Complemento:<br>
+                            <input id="dir_complemento" class="maxwidth" type="text" name="dir_complemento" maxlength="38" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span style="color:red; padding-left:10px;"></span>Dirección Extranjero<input type="checkbox" id="dir_extranjero" name="dir_extranjero" value="S" class="required">
+                        </td>
+                        <td style="font-weight:bold  !important;">
+                            País:<br>
+                            <select class="dir_extranjero maxwidth pais" id="dir_extran_pais" name="dir_extran_pais" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Ciudad:<br>
+                            <input id="dir_extranjero_ciudad" class="maxwidth " type="text" name="dir_extranjero_ciudad" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Estado/Provincia:<br>
+                            <select class="dir_extranjero maxwidth" id="dir_extranjero_estado_provincia" name="dir_extranjero_estado_provincia" disabled>
+                                <option value="0">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>                   
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;" >
+                            Dirección:<br>
+                            <input id="dir_extranjero_direccion" class="dir_extranjero maxwidth" type="text" name="dir_extranjero_direccion" maxlength="25" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Número:
+                            <input id="dir_extranjero_numero" class="dir_extranjero" type="text" name="dir_extranjero_numero" maxlength="15" disabled/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="3" style="font-weight:bold  !important;" >
+                            Complemento:<br>
+                            <input id="dir_extranjero_complemento" class="maxwidth dir_extranjero" type="text" name="dir_extranjero_complemento" maxlength="38" disabled/>
+                        </td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Antecedentes Laborales
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="enrol-column-1" colspan="1"></td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Situación Laboral:<br>
+                            <select class="maxwidth required situacion_laboral" id="situacion_laboral" name="situacion_laboral">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1"></td>
+                        <td class="enrol-column-2" colspan="1"></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Cargo:<br>
+                            <input id="cargo_laboral" class="maxwidth laboral" type="text" name="cargo_laboral" maxlength="30" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Antigüedad Laboral:<br>
+                            <input id="antiguedad_laboral" class="maxwidth laboral" type="text" name="antiguedad_laboral" maxlength="20" disabled/>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Datos Empleador:
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Rut empleador:<br>
+                            <input id="rut_empleador_laboral" class="rut laboral" type="text" name="rut_empleador_laboral" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Razón Social:<br>
+                            <input id="razon_social_laboral" class="maxwidth laboral" type="text" name="razon_social_laboral" maxlength="100" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Nombre Fantasía:<br>
+                            <input id="nombre_fantasia_laboral" class="maxwidth laboral" type="text" name="nombre_fantasia_laboral" maxlength="80" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span style="color:red; padding-left:10px;"></span>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Actividad Económica SII:<br>
+                            <select class="maxwidth laboral giro" id="actividad_economica_laboral" name="actividad_economica_laboral" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Numero Teléfono Comercial:<br>
+                            <input id="telefono_comercial_laboral" class="telefono laboral" type="text" name="telefono_comercial_laboral" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span style="color:red; padding-left:10px;"></span>Dirección Comercial:
+                        </td>
+                        <td style="font-weight:bold  !important;">
+                            País:<br>
+                            <select class="maxwidth laboral pais" id="pais_direccion_laboral" name="pais_direccion_laboral" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Región:<br>
+                            <select class="maxwidth laboral region" id="region_direccion_laboral" name="region_direccion_laboral" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="comuna_direccion_laboral">Comuna:</span><br>
+                            <select class="maxwidth laboral" id="comuna_direccion_laboral" name="comuna_direccion_laboral" disabled>
+                                <option value="0">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Ciudad:<br>
+                            <input id="ciudad_direccion_laboral" class="maxwidth" type="text" name="ciudad_direccion_laboral" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;" >
+                            Dirección:<br>
+                            <input id="direccion_direccion_laboral" class="maxwidth laboral" type="text" name="direccion_direccion_laboral" maxlength="40" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr class="sub_collap cony_cabece">
+                        <td class="subtitle" colspan="4">
+                            Datos Cónyuge
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold !important;">Datos Cónyuge</td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            Número de Documento:<br>
+                            <input id="ident_conyuge" class="maxwidth rut conyuge " type="text" name="ident_conyuge" maxlength="20" />
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold !important;">
+                            Sexo:
+                            <label for="Masculino_conyuge">Masculino</label>
+                            <input class="" type="radio" name="sexo_conyuge" value="M" id="Masculino_conyuge" >
+                            <label for="Femenino_conyuge">Femenino</label>
+                            <input class="" type="radio" name="sexo_conyuge" value="F" id="Femenino_conyuge" checked >
+                        </td>
+                        <td class="enrol-column-2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            
+                            Nombres:<br><input  id="nombre_conyuge" class="maxwidth conyuge" type="text" name="nombre_conyuge" maxlength="30" />
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            
+                            Apellido Paterno:<br><input id="apellido_pat_conyuge" class="maxwidth conyuge" type="text" name="apellido_pat_conyuge" maxlength="50" />
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            
+                            Apellido Materno:<br><input id="apellido_mat_conyuge" class="maxwidth conyuge" type="text" name="apellido_mat_conyuge" maxlength="50" />
+                        </td>
+                    </tr>
+                    <tr id="flag_existe">
+                        <td style="font-weight:bold  !important;"></td>
+                        <td style="font-weight:bold  !important;">
+                            Profesión:<br>
+                            <select class="maxwidth conyuge" id="profesion_conyuge" name="profesion_conyuge" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td style="font-weight:bold  !important;">
+                            Nivel Educacional:<br>
+                            <select class="maxwidth conyuge" id="nivel_educacional_conyuge" name="nivel_educacional_conyuge">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td style="font-weight:bold  !important;">
+                            Nacionalidad:<br>
+                            <select class="maxwidth conyuge pais" id="nacionalidad_conyuge" name="nacionalidad_conyuge">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold  !important;"></td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Teléfono Celular:<br>
+                            <input id="telefono_particular_conyuge" class="telefono conyuge" type="text" name="telefono_particular_conyuge" />
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            Dirección Particular Cónyuge:
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            País:<br>
+                            <select class="maxwidth conyuge pais" id="dir_pais_conyuge" name="dir_pais_conyuge" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            Región:<br>
+                            <select class="maxwidth region conyuge" id="dir_region_conyuge" name="dir_region_conyuge" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            <span class="dir_comuna_conyuge">Comuna:</span><br>
+                            <select class="maxwidth conyuge" id="dir_comuna_conyuge" name="dir_comuna_conyuge" >
+                                <option value="0">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Ciudad:<br>
+                            <input id="dir_ciudad_conyuge" class="maxwidth" type="text" name="dir_ciudad_conyuge" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;" >
+                            Dirección:<br>
+                            <input id="dir_direccion_conyuge" class="maxwidth conyuge" type="text" name="dir_direccion_conyuge" maxlength="30" />
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td style="font-weight:bold  !important;">
+                            Situación Laboral:<br>
+                            <select class="maxwidth conyuge situacion_laboral" id="situacion_laboral_conyugue" name="situacion_laboral_conyugue" >
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Datos Empleador del Cónyuge
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Rut empleador:<br>
+                            <input id="identificador_empleador_conyuge" class="rut empleador_conyuge" type="text" name="identificador_empleador_conyuge" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+
+                        </td>
+                    </tr>                   
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            Cargo:<br>
+                            <input id="cargo_empleador_conyuge" class=" maxwidth empleador_conyuge" type="text" name="cargo_empleador_conyuge" maxlength="30" disabled/>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Actividad Económica SII:<br>
+                            <select class="empleador_conyuge giro" style="max-width: 450px !important; width: 450px !important; min-width: 450px !important;" id="act_economica_empleador_conyuge" name="act_economica_empleador_conyuge" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Razón Social Empleador:<br>
+                            <input id="razon_social_empleador_conyuge" class="maxwidth empleador_conyuge" type="text" name="razon_social_empleador_conyuge" maxlength="150" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            Nombre Fantasía Empleador:<br>
+                            <input id="nombre_fantasia_empleador_conyuge" class="maxwidth empleador_conyuge" type="text" name="nombre_fantasia_empleador_conyuge" maxlength="80" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Datos para Contacto
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            Contacto (opcional):<input type="checkbox" name="tiene_contacto" id="tiene_contacto" value="S" >
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            Nombres:<br><input  id="nombres_contacto" class="maxwidth contacto" type="text" name="nombres_contacto" maxlength="30" disabled/>
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            Apellido Paterno:<br><input id="ape_pat_contacto" class="maxwidth contacto" type="text" name="ape_pat_contacto" maxlength="30" disabled/>
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            Apellido Materno:<br><input id="ape_mat_contacto" class="maxwidth contacto" type="text" name="ape_mat_contacto" maxlength="30" disabled/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" colspan="1" style="font-weight:bold  !important;">
+                            Dirección de Contacto:
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold  !important;">
+                            País:<br>
+                            <select class="maxwidth contacto pais" id="pais_contacto" name="pais_contacto" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;" >
+                            Región:<br>
+                            <select class="maxwidth contacto region" id="region_contacto" name="region_contacto" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            <span class="comuna_contacto">Comuna:</span><br>
+                            <select class="maxwidth contacto" id="comuna_contacto" name="comuna_contacto" disabled>
+                                <option value="0">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Ciudad:<br>
+                            <input id="ciudad_contacto" class="maxwidth" type="text" name="ciudad_contacto" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Código Postal:<br><input  id="codigo_postal_contacto" class="maxwidth contacto" type="text" name="codigo_postal_contacto" maxlength="11" disabled/>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;" >
+                            Dirección:<br>
+                            <input id="direccion_contacto" class="maxwidth contacto" type="text" name="direccion_contacto" maxlength="30" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold  !important;">
+                            Teléfono Particular Contacto:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_par_contacto" class="telefono contacto" type="text" name="telefono_par_contacto" disabled/>
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            Teléfono Celular Contacto:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_cel_contacto" class="telefono contacto" type="text" name="telefono_cel_contacto" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            Fax Contacto:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="telefono_fax_contacto" class="telefono contacto" type="text" name="telefono_fax_contacto" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold  !important;">
+                            Correo Electrónico Contacto:
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;">
+                            <input id="correo_electronico_contacto" class="correo contacto" type="text" name="correo_electronico_contacto" maxlength="50" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Datos del Representante Legal o Autorizado para dar Órdenes
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold !important;">Rep. Legal o Autorizado para dar Órdenes (opcional):<input type="checkbox" name="tiene_representante" id="tiene_representante" value="S" ></td>
+                        <td class="enrol-column-2" style="font-weight:bold !important;">
+                            Rol Único Tributario: <br>
+                            <input id="iden_repre" class="maxwidth rut representante " type="text" name="iden_repre" maxlength="20" disabled/>
+                        </td>
+                        <td  class="enrol-column-2" style="font-weight:bold  !important;">
+                           
+                        </td>
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;"></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            Tipo de Relación: <br>
+                            <select class="maxwidth representante" id="tipo_relacion_representante" name="tipo_relacion_representante" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                             Fecha de Inicio Relación: <br>
+                            <input id="fech_inicio_relacion_representante" class="fecha representante" type="text" name="fech_inicio_relacion_representante" maxlength="20" disabled/>
+                            <a id="fech_inicio_relacion_representante_button" name="fech_inicio_relacion_representante_button" class="con-a-img"><img class="con-button-img" src="../styles/images/ic_calendario.gif"/></a>
+                        </td>
+                        <td  style="font-weight:bold  !important;"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td  style="font-weight:bold  !important;">
+                            Nombres:<br><input  id="nombre_representante" class="maxwidth representante" type="text" name="nombre_representante" maxlength="30" disabled/>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            Apellido Paterno:<br><input id="apellido_pat_representante" class="maxwidth representante" type="text" name="apellido_pat_representante" maxlength="50" disabled/>
+                        </td>
+                        <td  style="font-weight:bold  !important;">
+                            Apellido Materno:<br><input id="apellido_mat_representante" class="maxwidth representante" type="text" name="apellido_mat_representante" maxlength="50" disabled/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="enrol-column-1" style="font-weight:bold !important;"></td>
+                        <td  class="enrol-column-2" style="font-weight:bold  !important;">
+                            Fecha de Nacimiento: <br>
+                            <input id="fech_nacimiento_representante" class="fecha representante" type="text" name="fech_nacimiento_representante" maxlength="20" disabled/>
+                            <a id="fech_nacimiento_representante_button" name="fech_nacimiento_representante_button" class="con-a-img"><img class="con-button-img" src="../styles/images/ic_calendario.gif"/></a>
+                        </td>
+                        <td class="enrol-column-2" style="font-weight:bold !important;">
+                            Nacionalidad: <br>
+                            <select class="maxwidth pais representante" id="nacionalidad_representante" name="nacionalidad_representante" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        
+                        <td class="enrol-column-2" colspan="1" style="font-weight:bold  !important;"></td>
+                        
+                    </tr>
+                    
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Antecedentes Adicionales
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td colspan="4" style="font-weight:bold  !important;">
+                            <span style="color:red; padding-left:10px;"></span>Persona Expuesta Políticamente:
+                            <label for="Pep_si">Si</label>
+                            <input type="radio" name="PEP" value="S" id="Pep_si">
+                            <label for="Pep_no">No</label>
+                            <input type="radio" name="PEP" value="N" id="Pep_no" checked>
+                            <div class="datagrid">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td colspan="3" style="font-weight:bold  !important; text-align:center !important;" >
+                                            Identificación de Cargos PEP
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            Cargo
+                                        </td>
+                                        <td colspan="1">
+                                            Institución
+                                        </td>
+                                        <td colspan="1">
+                                            Fecha de Servicio
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input class="PEP1 maxwidth" type="text" id="pep_cargo1" name="pep_cargo1" maxlength="30" disabled/></td>
+                                        <td><input class="PEP1 maxwidth" type="text" id="pep_institucion1" name="pep_institucion1" maxlength="30" disabled/></td>
+                                        <td>
+                                            <input class="PEP1 fecha" type="text" id="pep_fecha_servicio1" name="pep_fecha_servicio1" maxlength="20" disabled/>
+                                            <a id="pep_fecha_servicio1_button" name="pep_fecha_servicio1_button" class="PEP1 con-a-img" disabled><img class="con-button-img" src="../styles/images/ic_calendario.gif"/></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input class="PEP2 maxwidth" type="text" id="pep_cargo2" name="pep_cargo2" maxlength="30" disabled/></td>
+                                        <td><input class="PEP2 maxwidth" type="text" id="pep_institucion2" name="pep_institucion2" maxlength="30" disabled/></td>
+                                        <td>
+                                            <input class="PEP2 fecha" type="text" id="pep_fecha_servicio2" name="pep_fecha_servicio2" maxlength="20" disabled/>
+                                            <a id="pep_fecha_servicio2_button" name="pep_fecha_servicio2_button" class="PEP2 con-a-img" disabled><img class="con-button-img" src="../styles/images/ic_calendario.gif"/></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" style="font-weight:bold  !important;">
+                            <span style="color:red; padding-left:10px;"></span>Persona es pariente PEP:
+                            <label for="rel_Pep_si">Si</label>
+                            <input type="radio" name="rel_PEP" value="S" id="rel_Pep_si">
+                            <label for="rel_Pep_no">No</label>
+                            <input type="radio" name="rel_PEP" value="N" id="rel_Pep_no" checked>
+                            <div class="datagrid">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td colspan="4" style="font-weight:bold  !important; text-align:center !important;" >
+                                            Identificación de Cargos PEP
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            Nombre
+                                        </td>
+                                        <td colspan="1">
+                                            Cargo
+                                        </td>
+                                        <td colspan="1">
+                                            Institución
+                                        </td>
+                                        <td colspan="1">
+                                            Parentesco
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input class="pariente_pep1 maxwidth" type="text" id="pariente_pep_nombre_1" name="pariente_pep_nombre_1" maxlength="80" disabled/></td>
+                                        <td><input class="pariente_pep1 maxwidth" type="text" id="pariente_pep_cargo_1" name="pariente_pep_cargo_1" maxlength="30" disabled/></td>
+                                        <td><input class="pariente_pep1 maxwidth" type="text" id="pariente_pep_institucion_1" name="pariente_pep_institucion_1" maxlength="30" disabled/></td>
+                                        <td><input class="pariente_pep1 maxwidth" type="text" id="pariente_pep_parentesco_1" name="pariente_pep_parentesco_1" maxlength="30" disabled/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input class="pariente_pep2 maxwidth" type="text" id="pariente_pep_nombre_2" name="pariente_pep_nombre_2" maxlength="80" disabled/></td>
+                                        <td><input class="pariente_pep2 maxwidth" type="text" id="pariente_pep_cargo_2" name="pariente_pep_cargo_2" maxlength="30" disabled/></td>
+                                        <td><input class="pariente_pep2 maxwidth" type="text" id="pariente_pep_institucion_2" name="pariente_pep_institucion_2" maxlength="30" disabled/></td>
+                                        <td><input class="pariente_pep2 maxwidth" type="text" id="pariente_pep_parentesco_2" name="pariente_pep_parentesco_2" maxlength="30" disabled/></td>
+                                    </tr>                               
+                                </tbody>
+                            </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="font-weight:bold  !important;">
+                         <span style="color:red; padding-left:10px;"></span>Participación en Personas Jurídicas sobre un 10 por ciento:
+                            <div class="datagrid">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td colspan="6" style="font-weight:bold  !important; text-align:center !important;" >
+                                            Identificación de la Persona Jurídica
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            Rut
+                                        </td>
+                                        <td colspan="1">
+                                            Razón Social
+                                        </td>
+                                        <td colspan="1" style=" max-width: 70px !important; width: 70px !important; min-width: 70px !important;">
+                                            % Participación
+                                        </td>
+                                        <td colspan="1">
+                                            Tipo Relación
+                                        </td>
+                                        <td colspan="1"> 
+                                            País Constitución
+                                        </td>
+                                        <td colspan="1" style=" max-width: 70px !important; width: 70px !important; min-width: 70px !important;"> 
+                                            Actividad Económica SII
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody class="participa">
+                                    <tr>
+                                        <td><input class="participa1 rut no-permite-duplicado" type="text" id="participa_rut_1" name="participa_rut_1" maxlength="20"/></td>
+                                        <td><input class="participa1" type="text" id="participa_razon_1" name="participa_razon_1" maxlength="80" disabled/></td>
+                                        <td><input class="participa1 porcentaje" type="text" id="participa_porcentaje_1" name="participa_porcentaje_1" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                        <td>
+                                            <input class="participa1" type="text" id="participa_realacion_1" name="participa_realacion_1" maxlength="60" disabled/>
+                                        </td>   
+                                        <td>
+                                            <select class="maxwidth participa1 pais" id="participa_pais_1" name="participa_pais_1" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="width70px participa1 giro" id="participa_actividad_economica_1" name="participa_actividad_economica_1" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input class="participa2 rut no-permite-duplicado" type="text" id="participa_rut_2" name="participa_rut_2" maxlength="20"/></td>
+                                        <td><input class="participa2" type="text" id="participa_razon_2" name="participa_razon_2" maxlength="80" disabled/></td>
+                                        <td><input class="participa2 porcentaje" type="text" id="participa_porcentaje_2" name="participa_porcentaje_2" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                        <td>
+                                            <input class="participa2" type="text" id="participa_realacion_2" name="participa_realacion_2" maxlength="60" disabled/>
+                                        </td>   
+                                        <td>
+                                            <select class="maxwidth participa2 pais" id="participa_pais_2" name="participa_pais_2" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="width70px participa2 giro" id="participa_actividad_economica_2" name="participa_actividad_economica_2" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input class="participa3 rut no-permite-duplicado" type="text" id="participa_rut_3" name="participa_rut_3" maxlength="20"/></td>
+                                        <td><input class="participa3" type="text" id="participa_razon_3" name="participa_razon_3" maxlength="80" disabled/></td>
+                                        <td><input class="participa3 porcentaje" type="text" id="participa_porcentaje_3" name="participa_porcentaje_3" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                        <td>
+                                            <input class="participa3" type="text" id="participa_realacion_3" name="participa_realacion_3" maxlength="60" disabled/>
+                                        </td>   
+                                        <td>
+                                            <select class="maxwidth participa3 pais" id="participa_pais_3" name="participa_pais_3" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="width70px participa3 giro" id="participa_actividad_economica_3" name="participa_actividad_economica_3" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input  class="participa4 rut no-permite-duplicado" type="text" id="participa_rut_4" name="participa_rut_4" maxlength="20"/></td>
+                                        <td><input  class="participa4" type="text" id="participa_razon_4" name="participa_razon_4" maxlength="80" disabled/></td>
+                                        <td><input  class="participa4 porcentaje" type="text" id="participa_porcentaje_4" name="participa_porcentaje_4" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                        <td>
+                                            <input class="participa4" type="text" id="participa_realacion_4" name="participa_realacion_4" maxlength="60" disabled/>
+                                        </td>   
+                                        <td>
+                                            <select class="maxwidth participa4 pais" id="participa_pais_4" name="participa_pais_4" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="width70px participa4 giro" id="participa_actividad_economica_4" name="participa_actividad_economica_4" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input  class="participa5 rut no-permite-duplicado" type="text" id="participa_rut_5" name="participa_rut_5" maxlength="20"/></td>
+                                        <td><input  class="participa5" type="text" id="participa_razon_5" name="participa_razon_5" maxlength="80" disabled/></td>
+                                        <td><input  class="participa5 porcentaje" type="text" id="participa_porcentaje_5" name="participa_porcentaje_5" maxlength="20" style="max-width: 60px !important; width: 60px !important; min-width: 60px !important;" disabled/></td>
+                                        <td>
+                                            <input class="participa5" type="text" id="participa_realacion_5" name="participa_realacion_5" maxlength="60" disabled/>
+                                        </td>
+                                        <td>
+                                            <select class="maxwidth participa5 pais" id="participa_pais_5" name="participa_pais_5" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <select class="width70px participa5 giro" id="participa_actividad_economica_5" name="participa_actividad_economica_5" disabled>
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Cliente Posee cuenta Corriente en BCI:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <label for="cuenta_bci_si">Si</label>
+                            <input type="radio" name="cuenta_bci" value="S" id="cuenta_bci_si">
+                            <label for="cuenta_bci_no">No</label>
+                            <input type="radio" name="cuenta_bci" value="N" id="cuenta_bci_no" checked>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Posee Inversiones en BCI AGF:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <label for="inver_bci_agf_si">Si</label>
+                            <input type="radio" name="inver_bci_agf" value="S" id="inver_bci_agf_si">
+                            <label for="inver_bci_agf_no">No</label>
+                            <input type="radio" name="inver_bci_agf" value="N" id="inver_bci_agf_no" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Posee Inversiones en BCI:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <label for="inver_bci_si">Si</label>
+                            <input type="radio" name="inver_bci" value="S" id="inver_bci_si">
+                            <label for="inver_bci_no">No</label>
+                            <input type="radio" name="inver_bci" value="N" id="inver_bci_no" checked>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Relación Corredora (NCG 380):<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth required" id="rel_corr_ncg" name="rel_corr_ncg">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Relación Corredora (Art. 100):<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <label for="rel_corr_100_si">Si</label>
+                            <input type="radio" name="rel_corr_100" value="S" id="rel_corr_100_si">
+                            <label for="rel_corr_100_no">No</label>
+                            <input type="radio" name="rel_corr_100" value="N" id="rel_corr_100_no" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Clasificación FATCA:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth" id="clas_fatca" name="clas_fatca">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Origen de Fondos a Invertir
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Origen de fondos a Invertir:<br>
+                            <select class="maxwidth required" id="ori_fon_inver" name="ori_fon_inver">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Otros:<br>
+                            <input id="ori_fon_inver_otro" class="maxwidth apoderado" type="text" name="ori_fon_inver_otro" maxlength="50" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>País de Origen de Fondos:<br>
+                            <select class="maxwidth required pais" id="pais_origen_fondos" name="pais_origen_fondos">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Realizara Operaciones Internacionales:<br>
+                            <label for="opera_internacional_no">No</label>
+                            <input type="radio" name="opera_internacional" value="N" id="opera_internacional_no" checked>
+                            <label for="opera_internacional_si">Si</label>
+                            <input type="radio" name="opera_internacional" value="S" id="opera_internacional_si">
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            País 1:<br>
+                            <select class="opera_internacional maxwidth pais" id="opera_internacional_pais_1" name="opera_internacional_pais_1" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            País 2:<br>
+                            <select class="opera_internacional maxwidth pais" id="opera_internacional_pais_2" name="opera_internacional_pais_2" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            País 3:<br>
+                            <select class="opera_internacional maxwidth pais" id="opera_internacional_pais_3" name="opera_internacional_pais_3" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Ingresos
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Ingreso Mensual:<br>
+                            <select class="maxwidth required" id="ingreso_mensual_aproximada" name="ingreso_mensual_aproximada">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Ingreso Anual (Ocasional):<br>
+                            <select class="maxwidth required" id="ingreso_anual_aproximada" name="ingreso_anual_aproximada">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                    </tr>
+
+
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Patrimonio
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Patrimonio Financiero (Depósito a plazo, Fondos Mutuos, Acciones, Fondos de Inversión, etc.):<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth required" id="patrimonio_financiero" name="patrimonio_financiero">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Patrimonio no Financiero (Propiedades, vehículos, etc.):<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth required" id="patrimonio_no_financiero" name="patrimonio_no_financiero">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Forma de Pago
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Medio de Pago Abono a Favor del Cliente:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth" id="mecanismo_abono" name="mecanismo_abono">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Tipo Cuenta Bancaria:<br>
+                            <select class="maxwidth" id="cue_bancaria_tip" name="cue_bancaria_tip">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Origen Cuenta Bancaria:<br>
+                            <select class="maxwidth pais cuenta_ban" id="cuenta_ban_origen" name="cuenta_ban_origen" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Sucursal Cuenta Bancaria:<br>
+                            <input class="cuenta_ban" type="text" id="cuenta_ban_sucursal" name="cuenta_ban_sucursal" maxlength="30" disabled/>
+                        </td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;"></td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Número de Cuenta Bancaria:<br>
+                            <input class="cuenta_ban" type="text" id="cuenta_ban_numero" name="cuenta_ban_numero" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Banco Cuenta:<br>
+                            <select class="maxwidth  banco cuenta_ban" id="cuenta_ban_banco" name="cuenta_ban_banco" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Moneda Cuenta:<br>
+                            <select class="maxwidth cuenta_ban" id="cuen_bancar_mon" name="cuen_bancar_mon" disabled>
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr class="sub_collap">
+                        <td class="subtitle" colspan="4">
+                            Datos de la Cuenta
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Número de Cuenta:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <input class="required" type="text" id="cuenta_numero" name="cuenta_numero" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Propósito:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth required" id="cuenta_prop" name="cuenta_prop">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Tipo de Perfil Comercial:<br>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <select class="maxwidth required" id="cuenta_tipo_perfil" name="cuenta_tipo_perfil">
+                                <option value="">Seleccione...</option>
+                            </select>
+                        </td>
+                        <td colspan="2" style="font-weight:bold  !important;"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important; vertical-align: top !important;">
+                            <span class="req" style="color:red">* </span>Indicadores:<br>
+                        </td>
+                        <td colspan="3" style="font-weight:bold  !important;">
+                            <div class="datagrid">
+                                <table>
+                                    <tbody id="tabla_ind">
+                                        <tr>
+                                            <td>Administración de Cartera:</td>
+                                            <td><input type="checkbox" name="cuenta_admin_cartera" value="S" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Antecedentes Legales:</td>
+                                            <td><input type="checkbox" name="cuenta_ant_legales" value="S" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contrato Canal Internet:</td>
+                                            <td><input type="checkbox" name="cuenta_cont_canal_int" value="S" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fotocopia Cedula de Identidad:</td>
+                                            <td><input type="checkbox" name="cuenta_copia_cedula" value="S" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Órdenes a Recibir:</td>
+                                            <td>
+                                                <select class="required" id="cuenta_ordenes_a_recibir" name="cuenta_ordenes_a_recibir">
+                                                    <option value="">Seleccione...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contrato Custodia:</td>
+                                            <td>
+                                                <input type="checkbox" name="cuenta_cont_custodia" id="cuenta_cont_custodia" value="S" checked>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contrato Simultaneas:</td>
+                                            <td><input type="checkbox" name="cuenta_cont_simultaneas" value="S" checked></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Comisión por Custodia (UF)<br>
+                            <input class=" comision_uf" type="text" id="cuenta_comision_uf" name="cuenta_comision_uf" maxlength="20" disabled/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            <span class="req" style="color:red">* </span>Comisión por Transacción RV (%)<br>
+                            <input class="required comision_por" type="text" id="cuenta_comision_rv" name="cuenta_comision_rv" maxlength="20"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Comisión por Transacción RF (%)<br>
+                            <input class="comision_por" type="text" id="cuenta_comision_rf" name="cuenta_comision_rf" maxlength="20"/>
+                        </td>
+                        <td colspan="1" style="font-weight:bold  !important;">
+                            Comisión por Transacción IF (%)<br>
+                            <input class="comision_por" type="text" id="cuenta_comision_if" name="cuenta_comision_if" maxlength="20"/>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <div id="paging">
+                    <a class="con-button con-blue" id="_borrador">Borrador</a>
+                                <a class="con-button con-green" id="_confirmar">Ingresar Persona</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
